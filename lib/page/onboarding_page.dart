@@ -8,41 +8,44 @@ class OnBoardingPage extends StatelessWidget {
   Widget build(BuildContext context) => SafeArea(
         child: IntroductionScreen(
           pages: [
+           
+            
             PageViewModel(
-              title: 'A reader lives a thousand lives',
-              body: 'The man who never reads lives only one.',
-              image: buildImage('assets/ebook.png'),
-              decoration: getPageDecoration(),
-            ),
-            PageViewModel(
-              title: 'Featured Books',
-              body: 'Available right at your fingerprints',
-              image: buildImage('assets/readingbook.png'),
-              decoration: getPageDecoration(),
-            ),
-            PageViewModel(
-              title: 'Simple UI',
-              body: 'For enhanced reading experience',
-              image: buildImage('assets/manthumbs.png'),
-              decoration: getPageDecoration(),
-            ),
-            PageViewModel(
-              title: 'Today a reader, tomorrow a leader',
-              body: 'Start your journey',
+              title: 'Let us get started',
+              body: 'Never a better time than now to start thinking about how to build a good business connection.',
               footer: ButtonWidget(
-                text: 'Start Reading',
+                text: 'Next',
                 onClicked: () => goToHome(context),
               ),
-              image: buildImage('assets/learn.png'),
+              image: buildImage('assets/1.png'),
               decoration: getPageDecoration(),
             ),
+            PageViewModel(
+              title: 'Set up your business account',
+              body: 'Create an account to manage your business',
+              footer: ButtonWidget(
+                text: 'Next',
+                onClicked: () => goToHome(context),
+              ),
+              image: buildImage('assets/2.png'),
+              decoration: getPageDecoration(),
+            ),
+            PageViewModel(
+              title: 'Engage with your customer',
+              body: 'Organise the tasks and keep you work life healthy',
+              footer: ButtonWidget(
+                text: 'Get Started',
+                onClicked: () => goToHome(context),
+              ),
+              image: buildImage('assets/3.png'),
+              decoration: getPageDecoration(),
+            ),
+          
+           
           ],
-          done: Text('Read', style: TextStyle(fontWeight: FontWeight.w600)),
+          done: Text('', style: TextStyle(fontWeight: FontWeight.w600)),
           onDone: () => goToHome(context),
-          showSkipButton: true,
-          skip: Text('Skip'),
-          onSkip: () => goToHome(context),
-          next: Icon(Icons.arrow_forward),
+          
           dotsDecorator: getDotDecoration(),
           onChange: (index) => print('Page $index selected'),
           globalBackgroundColor: Theme.of(context).primaryColor,
@@ -64,8 +67,8 @@ class OnBoardingPage extends StatelessWidget {
       Center(child: Image.asset(path, width: 350));
 
   DotsDecorator getDotDecoration() => DotsDecorator(
-        color: Color(0xFFBDBDBD),
-        //activeColor: Colors.orange,
+        color: Color(0xFFE9591C),
+        activeColor: Color(0xFFE9591C),
         size: Size(10, 10),
         activeSize: Size(22, 10),
         activeShape: RoundedRectangleBorder(
